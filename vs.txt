@@ -1,0 +1,28 @@
+https://code.visualstudio.com/docs/editor/codebasics	shortcuts
+
+alt shift F     alignment
+
+li*2 		for multiple list
+
+
+ctrl+D		select word that having cursor
+
+ctrl+shift+L 	select multiple repeated words
+
+Ctrl+Shift+Alt+Down	Column Select Down	cursorColumnSelectDown
+
+
+
+Quokka(vscode extension) shortcut 
+
+ *   - Press `Ctrl Shift P ` to create a new JavaScript File
+ *   - Press `Ctrl K, J` to create a new JavaScript File
+ *   - Press `Ctrl K, T` to create a new TypeScript File
+ *   - Press `Ctrl K, L` to open an interactive sample from:
+ *     https://github.com/wallabyjs/interactive-examples
+ *
+ * To start/restart Quokka on an existing file:
+ *   - Press `Ctrl K, Q`	(IMPORTANT) 	
+
+
+

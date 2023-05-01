@@ -1,0 +1,45 @@
+git init
+git add.   or   git add file name.extension
+		git add first.txt second.txt
+		git add *.txt
+git commit -m "comment"
+git commit -m "I added two files"
+git log
+
+
+
+
+
+git status 
+git diff index.html
+git add .( "dot" for all files or type name i.e index.html)
+git commit -m "msg"
+git push
+git pull 	(git pull origin master)
+git merge --abort ( jo humne pull liya usko cancel krne k liye)  
+git restore . ( remove all changes)
+		Switch Branch using git checkout
+git checkout <existing_branch>
+git checkout -b <new_branch>
+
+
+git revert -n HEAD		// delete previous commit
+
+
+--------------------------------x---------------
+.gitignore (made file open in text docment and enter extension which files folders you want to hide)
+	third.txt
+	*.txt
+	*.xlsx
+
+
+
+/////-------------------Branches
+
+git branch -v	(show list of branches with some detail)
+git branch new-dev (creat new branch with name 'new-dev')
+git checout new-dev (switch to 'new-dev' branch)
+git merge new-dev( merrge 'new-dev'branch into currnt active branch mtlb jb ap master me hogy to wo new-dev ki files ko dev me dal dyga)
+git log master..new-dev ( ye log dy ga compare kr k master me or new-dev me ye file alag hai)
+
+git revert -n HEAD	//delete previous commit
