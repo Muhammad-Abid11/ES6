@@ -1,21 +1,26 @@
 //  Array Methods PDF
 
-/*
 
+/*
 const arr = ["Hello", "EveryOne", "Html", "CSS", "Nasa"];
 console.log(`Original Array ${arr.length}-->${arr}`);
+console.log(arr.length)
 
-arr.unshift("first")
+let a = arr.unshift("first") //it returns updated length of array
 console.log(`shift method ${arr.length}-->${arr}`);
+console.log(a)
 
-arr.shift()
+let aa = arr.shift()         //it returns shifted "Value"
 console.log(`unshift method ${arr.length}-->${arr}`);
+console.log(aa)
 
-arr.push("last")
+let b = arr.push("last")
 console.log(`push method ${arr.length}-->${arr}`);
+console.log(b)
 
-arr.pop()
+let c = arr.pop()
 console.log(`pop method ${arr.length}-->${arr}`);
+console.log(c)
 
 arr.reverse()
 console.log(`reverse method ${arr.length}-->${arr}`);
@@ -24,7 +29,7 @@ let arrOut = arr.splice(1, 3, "Add1", "Add2")
 console.log(`splice method(1,3) remove 3 values--> ${arr.length}-->${arr}`);
 console.log(`arrOut SpliceOut values--> ${arrOut}`);
 console.log(`slice method(1,3) show 2 values--> ${arr.slice(1, 3)}`)
-*/
+ */
 
 // Splice-->it Modifies The Array Return length of array
 // Starting at the index specified by the first parameter, remove the number of elements
