@@ -262,6 +262,7 @@ console.log(arr.every(n => n > 1));
 /*
 let arr = [1, 2, 3, 4, 5];
 console.log(arr.reduce((a, b) => a - b))
+console.log(arr.reduce((a, b) => a - b,0)) // ??
 console.log(arr.reduce((a, b) => a + b))
 console.log(arr.reduce((a, b) => a + b,1))
 console.log(arr.reduce((a, b) => a * b))
@@ -363,6 +364,25 @@ let sortedArr = arr.sort((a, b) => {
 sortedArr; //1,2,3,4,5
 let reverseArr = sortedArr.sort((a, b) => -1);
 reverseArr
+
+*/
+
+/* 
+
+let numArr = [10, 3, 44, 55, 100];
+numberArr--> 10,3,44,55,100
+
+Why does this happen?
+.sort() treats elements as strings by default.
+It compares them based on Unicode code points rather than numeric values.
+"10" comes before "3" because "1" is less than "3" in Unicode
+
+How does this work?
+The comparison function (a, b) => a - b sorts the numbers correctly.
+.sort() iterates over the array and compares each pair of numbers using:
+If (a - b) < 0 → a comes before b
+If (a - b) > 0 → b comes before a
+If (a - b) === 0 → order remains unchanged
 
 */
 
