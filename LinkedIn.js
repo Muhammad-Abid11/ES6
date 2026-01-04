@@ -3,7 +3,7 @@
 // -------------x------------
 
 // Var Scope Questions
-/*
+/* 
 
 var uName = "Ali";
 function Sh() {
@@ -13,23 +13,41 @@ function Sh() {
 Sh()
 console.log(uName);
 
+var name = "apple"
+foo=()=>{
+    var  name = "banana"
+    console.log(name)
+}
+console.log(name);       //result--> banana
+foo();
+
+foo2=()=>{
+    console.log(name)
+    var  name = "banana"
+}
+console.log(name);       //result--> banana
+foo2();
+
+foo3=()=>{
+    console.log(name)
+    let  name = "banana"
+}
+console.log(name);       //result--> banana
+foo3();
+
  */
-
-
 // -------------x------------
 
 // Scope Questions
 
-/*
 
 let x = "lol";
 let y = {
-    string: 234 // because it is not defined by var,let,const.
-    // so its scope is global and when page render it moves on " top "
+    string: 234
+
 }
 console.log(y[typeof x])
-
- */
+// its like y["string"]
 
 
 // -------------x------------

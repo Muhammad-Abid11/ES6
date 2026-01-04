@@ -148,6 +148,7 @@ var person2 = {
     // Since the "this" keyword is used inside the showFullName method below, and the showFullName method is defined on the person object,
     // "this" will have the value of the person object because the person object will invoke showFullName ()
     showFullName: function () {
+        // console.log(this)
         console.log(this.firstName + " " + this.lastName);
     }
 }
@@ -274,6 +275,65 @@ console.log(arr.reduce((a, b) => a * b,2))
 
 //,initial_value}
 
+// ---------------------x-----------
+
+/*
+-Reduce 56:00
+return must hai q k return value accumulator me use hogi
+1. use for sumition
+2. use array-->object
+3. use object---> array
+
+break not here
+*/
+/*
+var numArr = [6, 1, 2, 3, 4, 5];
+
+var arr = ["Ali", "Abid", "Ebad"]
+
+
+var sumofNum = numArr.reduce((acc, value, index) => {
+    console.log("acc", acc)//yhn last 16+5 ho k loop break is liye 21 nhi araha
+    console.log("value", value)
+    console.log("index", index)
+
+    // return //acc me undefined hojayega
+    // return acc
+    return acc + value
+}, 0)//1st.start value of acc--> accumilator
+//2nd. agar ye nhi dogy too 1st value acc me save hogi array ki
+//3rd. , or jo return hoga wo acc me save hota jayega
+
+sumofNum
+
+//-----x-------1:04:00
+// array-----> object
+
+
+var ObjName = arr.reduce((acc, value) => {
+    console.log("acc-->", acc)
+
+    // return acc[value] = value //1st try it //ye direct "acc" me value save kr rha hai 
+
+    acc[value] = value// yhn pehly object create then "acc" return 
+    // acc[value] = "Mr " + value
+    // acc["value"] = value //same key hona ki wajah sy 1 value ko update krta rhyga
+    return acc
+
+
+}, {})
+console.log(ObjName)
+
+//-----x-------1:04:00
+
+var arrNames = arr.reduce((acc, value) => {
+    acc.push("Mr " + value)
+    return acc
+}, [])
+arrNames
+
+*/
+// ---------------------x-----------
 
 
 ////    flat        -->concat sub-array too single array
@@ -399,9 +459,10 @@ function loop() {
 // block Scope
 function loop2() {
     for (let i = 0; i < 5; i++) {
-        // can access i here
+        // i can access "i" here
         console.log("final", i);
-        // returns an error here due to "let"
+        // but here returns an error due to "let"
+
     }
 
 }
@@ -475,15 +536,15 @@ noArgs();
 function showArgs(arg1, arg2) {
     console.log("arguments in object: ", arguments);
     console.log("arguments in Array", Array.from(arguments));
-
-    Args("hello", "world");
+}
+    showArgs("hello", "world");
 // arguments: { 0: 'hello', 1: 'world' }
 // [ 'hello', 'world' ]
 function showArgs2(...args) {
     console.log("arguments in 2nd object: ", args);
     console.log(Array.from(arguments));
     return `${args[0]} ${args[1]}`;
-
+}
 
 
 let returnD = showArgs2("hello", "world");
@@ -504,27 +565,22 @@ console.log(`return Data--> ${returnD}`)
 
 // 'this' keyword
 
-/*
-
 var name = "Fatema";
-
 function fun() {
     // some code here
     console.log(this.name); //work on browser not in vscode terminal
-
-    t user = {
+}
+const user = {
     name: "Marium",
     yearOfBirth: 1999,
     calcAge: function () {
         const currentYear = (new Date()).getFullYear();
         console.log(currentYear - this.yearOfBirth);
-
-
-    ); // 'this' is global. Logs "Fatema"
+    }
+}
+fun(); // 'this' is global. Logs "Fatema"
 user.calcAge(); // 'this' is the user object
-fun.call(user); // 'this' is the user object. Logs "Marium"
-
-*/
+fun.call(user);
 
 //--------------x---------------------------
 
@@ -539,15 +595,15 @@ fun.call(user); // 'this' is the user object. Logs "Marium"
 //// syntax       doSomething.call(object,arg1,arg2...)
 
 let display = {
-   show: function (para1, para2) { //<----Method
-       console.log(`fullname is --> ${this.firstName} ${this.lastName}  ${para1} ${para2}`)
-   }
-
+    show: function (para1, para2) { //<----Method
+        console.log(`fullname is --> ${this.firstName} ${this.lastName}  ${para1} ${para2}`)
+    }
+}
 
 let data = {
-   firstName: "Abid",
-   lastName: "Khan",
-
+    firstName: "Abid",
+    lastName: "Khan",
+}
 
 display.show.call(data, "value1", "Value2");
 
@@ -569,12 +625,12 @@ let display = {
     show: function (para1, para2) { //<----Method
         console.log(`fullname is --> ${this.firstName} ${this.lastName}  ${para1} ${para2}`)
     }
-
+}
 
 let data = {
     firstName: "Abid",
     lastName: "Khan",
-
+}
 
 display.show.apply(data, ["value1", "Value2"]);
 
@@ -593,13 +649,13 @@ let display = {
     show: function () { //<----Method
         return `fullname is --> ${this.firstName} ${this.lastName} `
     }
-
-    ole.log(display.show())
+}
+    console.log(display.show())
 
 let data = {
     firstName: "Abid",
     lastName: "Khan",
-
+}
 
 let dis = display.show.bind(data);
 console.log(dis)
